@@ -1,3 +1,20 @@
+{{! app/templates/application.hbs }}
 <h2 id="title">Welcome to Ember</h2>
 
+{{#if toriiSession.isAuthenticated}}
+  <p>You're logged in, {{toriiSession.user.name}}!</p>
+{{else if toriiSession.isWorking}}
+  <p>Logging in...</p>
+{{/if}}
+
+{{#if toriiSession.isAuthenticated}}
+  {{link-to 'My Account' 'my-account'}}<br/>
+
+  <a href="#" {{action 'logout'}}>Logout</a><br/>
+{{else}}
+  <a href="#" {{action 'login' 'facebook-oauth2'}}>Login with Facebook</a><br/>
+{{/if}}
+
+
 {{outlet}}
+

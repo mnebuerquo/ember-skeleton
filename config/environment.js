@@ -13,9 +13,30 @@ module.exports = function(environment) {
       }
     },
 
+    torii: {
+      //remoteServiceName: 'iframe', // use {{torii-iframe-placeholder}}
+      sessionServiceName: 'session',
+      providers: {
+        'facebook-oauth2': {
+          apiKey:      'facebook-app-id',
+          //redirectUri: '/my-custom-landing-uri' // default is the current URL
+        }
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
     }
   };
 
@@ -25,6 +46,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.torii.providers['facebook-oauth2'].apiKey = '1650244201894515';
+    ENV.contentSecurityPolicy['connect-src']="'self' http://localhost:3000"
   }
 
   if (environment === 'test') {

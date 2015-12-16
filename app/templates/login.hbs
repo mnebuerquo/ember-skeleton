@@ -1,0 +1,28 @@
+
+{{! app/templates/login.hbs }}
+{{#if session.isWorking}}
+  One sec while we get you signed in...
+{{else}}
+  {{error}}
+  <a href="#" {{action 'signInViaFacebook'}}>
+    Sign In with Facebook
+  </a>
+{{/if}}
+
+  <!-- app/templates/components/login-form.hbs -->
+  <form {{action 'signInWithPassword' on='submit'}}>
+    <div class="form-group">
+      <label for="identification">Email</label>
+      {{input value=email placeholder='Enter Email Address' class='form-control'}}
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      {{input value=password placeholder='Enter Password' class='form-control' type='password'}}
+    </div>
+    <button type="submit" class="btn btn-default">Login</button>
+  </form>
+  {{#if errorMessage}}
+    <div class="alert alert-danger">
+      <strong>Login failed:</strong> {{errorMessage}}
+    </div>
+  {{/if}}
