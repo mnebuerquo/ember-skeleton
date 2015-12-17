@@ -1,3 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
+<header>
+<h2 id="title">Welcome to Authentication</h2>
+  <div>A minimal app created by me to learn auth in Ember.</div>
+  {{#if session.isAuthenticated}}
+    <a {{action 'invalidateSession'}}>Logout</a>
+  {{else}}
+    {{#link-to 'login'}}Login{{/link-to}}
+  {{/if}}
+</header>
 
-{{outlet}}
+<div>
+  {{outlet}}
+</div>
+
+<footer>
+  <a href="https://github.com/mnebuerquo/ember-skeleton">Fork me on Github!</a>
+</footer>
