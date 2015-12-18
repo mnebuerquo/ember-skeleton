@@ -13,6 +13,6 @@
 
 5. `ember g route login`
 
-6. `ember g route application` - so we can inject the session
+6. `ember g controller application` - so we can inject the session
 
 7. `ember g controller login` - so we can get the form data
