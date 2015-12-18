@@ -16,3 +16,13 @@
 6. `ember g controller application` - so we can inject the session
 
 7. `ember g controller login` - so we can get the form data
+
+8. `ember install ember-cli-sass` - use sass for css
+
+9. `bower install bootstrap --save` - use bootstrap for layout also,
+    use this line in `ember-cli-build.js`:
+`app.import('bower_components/bootstrap/dist/css/bootstrap.css');`
+
+10. `ember g adapter application` - to link models to api routes
+
+
