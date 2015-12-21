@@ -16,7 +16,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    'ember-simple-auth': {
+      authenticationRoute: 'login',
+      serverTokenEndpoint: 'http://localhost:3000/api/auth/local/login',
+      crossOriginWhitelist: ['http://localhost:3000/']
+    },
+
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://localhost:3000"
+    },
   };
 
   if (environment === 'development') {
