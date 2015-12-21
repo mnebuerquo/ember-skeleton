@@ -2,16 +2,19 @@
 
 <h3>Log in</h3>
 <form>
-  <div>
-    {{ input value=email placeholder="Email"}}
-    {{ input value=password placeholder="Password"}}
+  <div class="form-group">
+    {{ input value=email placeholder="Email" classNames="form-control" }}
+    {{ input value=password placeholder="Password" classNames="form-control" }}
   </div>
   <div>
-    <input type="submit" {{action "authenticate"}} class="btn btn-submit" value="Login" />
+    <input type="submit" {{action "authenticate"}} class="btn btn-primary" value="Login" />
   </div>
   <div>
     {{#if errorMessage}}
-      <p>{{errorMessage}}</p>
+      <p class="bs-callout bs-callout-warning bg-warning">
+        <h4>An Error has Occurred</h4>
+        <span class="text-warning">{{errorMessage}}</span>
+      </p>
     {{/if}}
   </div>
 </form>

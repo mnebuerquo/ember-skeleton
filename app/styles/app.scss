@@ -1,0 +1,32 @@
+html,
+body,
+{
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+.ember-view
+{
+}
+
+.navbar {
+  background-color: #e5e5e5;
+}
+
+header {
+  margin-top: 60px; /* for the nav bar */
+  padding: 15px auto;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
